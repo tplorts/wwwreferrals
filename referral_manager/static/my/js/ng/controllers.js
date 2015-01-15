@@ -30,6 +30,14 @@
                 $scope.isPosting = false;
             });
         };
+
+        $scope.editLink = function(linkIndex){
+            console.log('edit link at ' + linkIndex);
+        };
+
+        $scope.deleteLink = function(linkIndex){
+            
+        };
     }]);
 
 }());

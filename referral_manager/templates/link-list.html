@@ -11,10 +11,41 @@
     </form>
     <div ng-show="errorMessage" ng-bind="errorMessage"></div>
 
-    <div class="link-table">
-      <div ng-repeat="link in links">
-        [[ link.title ]], [[ link.hits ]]
-      </div>
+    <table class="link-table">
+      <tr>
+        <th>
+          Title
+          <a>
+            <span class="glyphicon glyphicon-sort-by-attributes"></span>
+          </a>
+          <a>
+            <span class="glyphicon glyphicon-sort-by-attributes-alt"></span>
+          </a>
+        </th>
+        <th>
+          Hits
+        </th>
+        <th>Actions</th>
+      </tr>
+      <tr ng-cloak ng-repeat="link in links" class="link-row">
+        <td class="link-title-cell">
+          <a ng-href="/[[ link.title ]]/" target="_blank">
+            <span class="glyphicon glyphicon-new-window"></span>
+          </a>
+          <span ng-bind="link.title"></span>
+        </td>
+        <td class="link-hits-cell">
+          <span ng-bind="link.hits"></span>
+        </td>
+        <td class="link-actions-cell">
+          <a ng-click="editLink($index)">
+            <span class="glyphicon glyphicon-pencil"></span>
+          </a>
+          <a ng-click="deleteLink($index)">
+            <span class="glyphicon glyphicon-remove"></span>
+          </a>
+        </td>
+      </tr>
     </div>
   </div>
 {% endblock majorEnvelope %}
