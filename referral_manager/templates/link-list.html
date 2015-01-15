@@ -12,22 +12,31 @@
     <div ng-show="errorMessage" ng-bind="errorMessage"></div>
 
     <table class="link-table">
+
       <tr>
         <th>
           Title
-          <a>
+          <a ng-click="ordering.predicate = 'title'">
             <span class="glyphicon glyphicon-sort-by-attributes"></span>
           </a>
-          <a>
+          <a ng-click="ordering.predicate = '-title'">
             <span class="glyphicon glyphicon-sort-by-attributes-alt"></span>
           </a>
         </th>
         <th>
           Hits
+          <a ng-click="ordering.predicate = 'hits'">
+            <span class="glyphicon glyphicon-sort-by-attributes"></span>
+          </a>
+          <a ng-click="ordering.predicate = '-hits'">
+            <span class="glyphicon glyphicon-sort-by-attributes-alt"></span>
+          </a>
         </th>
         <th>Actions</th>
       </tr>
-      <tr ng-cloak ng-repeat="link in links" class="link-row">
+
+      <tr ng-cloak ng-repeat="link in links | orderBy:ordering.predicate"
+          class="link-row">
 
         <td ng-hide="isEditing[link.id]" class="link-title-cell">
           <a ng-href="/[[ link.title ]]/" target="_blank"

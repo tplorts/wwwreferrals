@@ -12,6 +12,9 @@
         };
         $scope.isPosting = false;
         $scope.isEditing = {};
+        $scope.ordering = {
+            predicate: ''
+        };
         
         function fetchLinks() {
             ReferralLinks.getList().then(function(fetchedLinks){
