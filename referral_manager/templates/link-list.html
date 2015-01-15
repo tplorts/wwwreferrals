@@ -2,11 +2,13 @@
 
 {% block majorEnvelope %}
   <div ng-controller="LinkListCtlr">
-    <form ng-submit="addLink()">
+    <form ng-submit="addLink()" class="new-link-form form-inline">
       <input type="text" placeholder="New link title"
+             class="form-control"
              ng-model="newLink.title" ng-diabled="isPosting">
-      <button type="submit" ng-disabled="isPosting">
-        Add
+      <button type="submit" ng-disabled="isPosting"
+              class="btn add-link-button">
+        <span class="glyphicon glyphicon-plus"></span>
       </button>
     </form>
     <div ng-show="errorMessage" ng-bind="errorMessage"></div>
@@ -15,7 +17,7 @@
 
       <tr>
         <th>
-          Title
+          <span class="header-title">Title</span>
           <a ng-click="ordering.predicate = 'title'">
             <span class="glyphicon glyphicon-sort-by-attributes"></span>
           </a>
@@ -24,7 +26,7 @@
           </a>
         </th>
         <th>
-          Hits
+          <span class="header-title">Hits</span>
           <a ng-click="ordering.predicate = 'hits'">
             <span class="glyphicon glyphicon-sort-by-attributes"></span>
           </a>
@@ -32,7 +34,9 @@
             <span class="glyphicon glyphicon-sort-by-attributes-alt"></span>
           </a>
         </th>
-        <th>Actions</th>
+        <th>
+          <span class="header-title">Actions</span>
+        </th>
       </tr>
 
       <tr ng-cloak ng-repeat="link in links | orderBy:ordering.predicate"
@@ -49,10 +53,10 @@
           <span ng-bind="link.hits"></span>
         </td>
         <td ng-hide="isEditing[link.id]" class="link-actions-cell">
-          <a ng-click="editLink(link.id, $index)">
+          <a ng-click="editLink(link.id, $index)" class="link-action-edit">
             <span class="glyphicon glyphicon-pencil"></span>
           </a>
-          <a ng-click="deleteLink($index)">
+          <a ng-click="deleteLink($index)" class="link-action-delete">
             <span class="glyphicon glyphicon-remove"></span>
           </a>
         </td>

@@ -1,5 +1,125 @@
-/* line 1, ../../../stylesheets/main.scss */
+/* line 4, ../../../stylesheets/main.scss */
 body {
   background-color: #444;
   color: #DDD;
+}
+
+/* line 9, ../../../stylesheets/main.scss */
+.new-link-form {
+  text-align: center;
+  margin: 30px 0;
+}
+/* line 12, ../../../stylesheets/main.scss */
+.new-link-form input {
+  display: inline-block;
+  width: 250px;
+}
+
+/* line 18, ../../../stylesheets/main.scss */
+.add-link-button {
+  background-color: #222;
+  color: #5C5 !important;
+  border: 1px solid #666;
+  border-radius: 20px;
+  font-size: 20px;
+  padding: 3px 6px 1px 7px;
+  margin-left: 10px;
+  -moz-transition: all 0.15s ease;
+  -o-transition: all 0.15s ease;
+  -webkit-transition: all 0.15s ease;
+  transition: all 0.15s ease;
+}
+/* line 27, ../../../stylesheets/main.scss */
+.add-link-button:hover, .add-link-button:focus {
+  -moz-box-shadow: #CCC 0 0 6px;
+  -webkit-box-shadow: #CCC 0 0 6px;
+  box-shadow: #CCC 0 0 6px;
+  background-color: #333;
+  outline: none;
+}
+
+/* line 34, ../../../stylesheets/main.scss */
+a {
+  color: #5EE;
+  cursor: pointer;
+  -moz-transition: all 0.15s ease;
+  -o-transition: all 0.15s ease;
+  -webkit-transition: all 0.15s ease;
+  transition: all 0.15s ease;
+}
+/* line 38, ../../../stylesheets/main.scss */
+a:hover {
+  text-decoration: none;
+  color: #59F;
+}
+
+/* line 44, ../../../stylesheets/main.scss */
+.link-table {
+  margin: auto;
+  font-size: 18px;
+}
+/* line 46, ../../../stylesheets/main.scss */
+.link-table a {
+  margin: 0 3px;
+}
+
+/* line 52, ../../../stylesheets/main.scss */
+table {
+  background-color: #555;
+  -moz-box-shadow: #999 0 0 8px;
+  -webkit-box-shadow: #999 0 0 8px;
+  box-shadow: #999 0 0 8px;
+  border-radius: 8px;
+  overflow: hidden;
+  border-spacing: 5px;
+}
+
+/* line 60, ../../../stylesheets/main.scss */
+th, td {
+  padding: 8px 18px;
+}
+
+/* line 65, ../../../stylesheets/main.scss */
+tr:nth-child(2n) {
+  background-color: #666;
+}
+
+/* line 70, ../../../stylesheets/main.scss */
+.header-title {
+  color: #FFF;
+  font-size: 20px;
+  font-variant: small-caps;
+}
+
+/* line 77, ../../../stylesheets/main.scss */
+.link-title-cell .glyphicon {
+  font-size: 12px;
+}
+
+/* line 82, ../../../stylesheets/main.scss */
+.link-hits-cell {
+  text-align: right;
+  font-family: monospace;
+  padding-right: 30px;
+}
+
+/* line 88, ../../../stylesheets/main.scss */
+.link-actions-cell {
+  text-align: center;
+}
+/* line 90, ../../../stylesheets/main.scss */
+.link-actions-cell .link-action-edit {
+  color: #EE5;
+}
+/* line 92, ../../../stylesheets/main.scss */
+.link-actions-cell .link-action-edit:hover {
+  color: #AA5;
+}
+/* line 96, ../../../stylesheets/main.scss */
+.link-actions-cell .link-action-delete {
+  color: #E55;
+}
+/* line 98, ../../../stylesheets/main.scss */
+.link-actions-cell .link-action-delete:hover {
+  color: #A55;
 }

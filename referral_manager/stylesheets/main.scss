@@ -1,4 +1,102 @@
+@import "compass/css3";
+
+
 body {
     background-color: #444;
     color: #DDD;
+}
+
+.new-link-form {
+    text-align: center;
+    margin: 30px 0;
+    input {
+        display: inline-block;
+        width: 250px;
+    }
+}
+
+.add-link-button {
+    background-color: #222;
+    color: #5C5 !important;
+    border: 1px solid #666;
+    border-radius: 20px;
+    font-size: 20px;
+    padding: 3px 6px 1px 7px;
+    margin-left: 10px;
+    @include transition(all .15s ease);
+    &:hover, &:focus {
+        @include box-shadow(#CCC 0 0 6px);
+        background-color: #333;
+        outline: none;
+    }
+}
+
+a {
+    color: #5EE;
+    cursor: pointer;
+    @include transition(all .15s ease);
+    &:hover {
+        text-decoration: none;
+        color: #59F;
+    }
+}
+
+.link-table {
+    margin: auto;
+    a {
+        margin: 0 3px;
+    }
+    font-size: 18px;
+}
+
+table {
+    background-color: #555;
+    @include box-shadow(#999 0 0 8px);
+    border-radius: 8px;
+    overflow: hidden;
+    border-spacing: 5px;
+}
+
+th, td {
+    padding: 8px 18px;
+}
+
+tr {
+    &:nth-child(2n) {
+        background-color: #666;
+    }
+}
+
+.header-title {
+    color: #FFF;
+    font-size: 20px;
+    font-variant: small-caps;
+}
+
+.link-title-cell {
+    .glyphicon {
+        font-size: 12px;
+    }
+}
+
+.link-hits-cell {
+    text-align: right;
+    font-family: monospace;
+    padding-right: 30px;
+}
+
+.link-actions-cell {
+    text-align: center;
+    .link-action-edit {
+        color: #EE5;
+        &:hover {
+            color: #AA5;
+        }
+    }
+    .link-action-delete {
+        color: #E55;
+        &:hover {
+            color: #A55;
+        }
+    }
 }
