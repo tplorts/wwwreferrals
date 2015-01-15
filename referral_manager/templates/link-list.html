@@ -18,19 +18,23 @@
       <tr>
         <th>
           <span class="header-title">Title</span>
-          <a ng-click="ordering.predicate = 'title'">
+          <a ng-click="ordering.predicate = 'title'"
+             class="[[ ordering.predicate == 'title' ? 'active':'' ]] order-setter">
             <span class="glyphicon glyphicon-sort-by-attributes"></span>
           </a>
-          <a ng-click="ordering.predicate = '-title'">
+          <a ng-click="ordering.predicate = '-title'"
+             class="[[ ordering.predicate == '-title' ? 'active':'' ]] order-setter">
             <span class="glyphicon glyphicon-sort-by-attributes-alt"></span>
           </a>
         </th>
         <th>
           <span class="header-title">Hits</span>
-          <a ng-click="ordering.predicate = 'hits'">
+          <a ng-click="ordering.predicate = 'hits'"
+             class="[[ ordering.predicate == 'hits' ? 'active':'' ]] order-setter">
             <span class="glyphicon glyphicon-sort-by-attributes"></span>
           </a>
-          <a ng-click="ordering.predicate = '-hits'">
+          <a ng-click="ordering.predicate = '-hits'"
+             class="[[ ordering.predicate == '-hits' ? 'active':'' ]] order-setter">
             <span class="glyphicon glyphicon-sort-by-attributes-alt"></span>
           </a>
         </th>

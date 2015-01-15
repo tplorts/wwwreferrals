@@ -13,7 +13,7 @@
         $scope.isPosting = false;
         $scope.isEditing = {};
         $scope.ordering = {
-            predicate: ''
+            predicate: '-hits'
         };
         
         function fetchLinks() {

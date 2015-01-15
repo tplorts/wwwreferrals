@@ -82,6 +82,12 @@ tr {
     font-variant: small-caps;
 }
 
+.order-setter {
+    &.active {
+        color: #E5E;
+    }
+}
+
 .link-title-cell {
     .glyphicon {
         font-size: 12px;

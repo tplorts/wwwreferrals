@@ -103,39 +103,44 @@ tr:nth-child(2n) {
 }
 
 /* line 86, ../../../stylesheets/main.scss */
+.order-setter.active {
+  color: #E5E;
+}
+
+/* line 92, ../../../stylesheets/main.scss */
 .link-title-cell .glyphicon {
   font-size: 12px;
 }
 
-/* line 91, ../../../stylesheets/main.scss */
+/* line 97, ../../../stylesheets/main.scss */
 .link-hits-cell {
   text-align: right;
   font-family: monospace;
   padding-right: 30px;
 }
 
-/* line 97, ../../../stylesheets/main.scss */
+/* line 103, ../../../stylesheets/main.scss */
 .link-actions-cell {
   text-align: center;
 }
-/* line 99, ../../../stylesheets/main.scss */
+/* line 105, ../../../stylesheets/main.scss */
 .link-actions-cell .link-action-edit {
   color: #EE5;
 }
-/* line 101, ../../../stylesheets/main.scss */
+/* line 107, ../../../stylesheets/main.scss */
 .link-actions-cell .link-action-edit:hover {
   color: #AA5;
 }
-/* line 105, ../../../stylesheets/main.scss */
+/* line 111, ../../../stylesheets/main.scss */
 .link-actions-cell .link-action-delete {
   color: #E55;
 }
-/* line 107, ../../../stylesheets/main.scss */
+/* line 113, ../../../stylesheets/main.scss */
 .link-actions-cell .link-action-delete:hover {
   color: #A55;
 }
 
-/* line 113, ../../../stylesheets/main.scss */
+/* line 119, ../../../stylesheets/main.scss */
 .link-edit-input {
   color: #333;
 }
