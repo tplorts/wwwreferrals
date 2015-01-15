@@ -29,7 +29,8 @@
       </tr>
       <tr ng-cloak ng-repeat="link in links" class="link-row">
         <td class="link-title-cell">
-          <a ng-href="/[[ link.title ]]/" target="_blank">
+          <a ng-href="/[[ link.title ]]/" target="_blank"
+             ng-click="hitLink($index)">
             <span class="glyphicon glyphicon-new-window"></span>
           </a>
           <span ng-bind="link.title"></span>

@@ -36,7 +36,16 @@
         };
 
         $scope.deleteLink = function(linkIndex){
-            
+            var toDelete = $scope.links[linkIndex];
+            toDelete.remove().then(function(){
+                fetchLinks();
+            }, function(errorResponse){
+                console.log(errorResponse.data);
+            });
+        };
+
+        $scope.hitLink = function(linkIndex){
+            $scope.links[linkIndex].hits++;
         };
     }]);
 
