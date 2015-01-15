@@ -2,6 +2,10 @@
 
 {% block majorEnvelope %}
   <div ng-controller="LinkListCtlr">
-    [[ theWord ]]
+    <div class="link-table">
+      <div ng-repeat="link in links">
+        [[ link.title ]], [[ link.hits ]]
+      </div>
+    </div>
   </div>
 {% endblock majorEnvelope %}

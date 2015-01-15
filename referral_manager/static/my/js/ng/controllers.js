@@ -3,9 +3,11 @@
 
     var cmod = angular.module('wwwReferralsApp.controllers', []);
 
-    function LinkListCtlr($scope) {
-        $scope.theWord = 'Hej';
-    }
-    cmod.controller('LinkListCtlr', ['$scope', LinkListCtlr]);
+    cmod.controller('LinkListCtlr', ['$scope', 'Restangular', function($scope, Restangular) {
+        $scope.links = [];
+        Restangular.all('links').getList().then(function(fetchedLinks){
+            $scope.links = fetchedLinks;
+        });
+    }]);
 
 }());
