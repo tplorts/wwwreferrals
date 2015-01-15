@@ -15,9 +15,9 @@ body {
     }
 }
 
-.add-link-button {
+.btn-glob {
     background-color: #222;
-    color: #5C5 !important;
+    color: #5EE;
     border: 1px solid #666;
     border-radius: 20px;
     font-size: 20px;
@@ -28,7 +28,16 @@ body {
         @include box-shadow(#CCC 0 0 6px);
         background-color: #333;
         outline: none;
+        color: #5EE;
     }
+}
+
+.add-link-button {
+    color: #5C5 !important;
+}
+
+.done-editing-button {
+    padding: 3px 7px 1px 5px;
 }
 
 a {
@@ -99,4 +108,8 @@ tr {
             color: #A55;
         }
     }
+}
+
+.link-edit-input {
+    color: #333;
 }

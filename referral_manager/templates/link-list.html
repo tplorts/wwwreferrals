@@ -7,7 +7,7 @@
              class="form-control"
              ng-model="newLink.title" ng-diabled="isPosting">
       <button type="submit" ng-disabled="isPosting"
-              class="btn add-link-button">
+              class="btn btn-glob add-link-button">
         <span class="glyphicon glyphicon-plus"></span>
       </button>
     </form>
@@ -63,8 +63,11 @@
 
         <td colspan="3" ng-show="isEditing[link.id]">
           <form ng-submit="commitLinkEdit(link.id, $index)">
-            <input type="text" ng-model="link.pendingTitle">
-            <button type="submit">Done</button>
+            <input type="text" ng-model="link.pendingTitle"
+                   class="link-edit-input">
+            <button type="submit" class="btn btn-glob done-editing-button">
+              <span class="glyphicon glyphicon-ok"></span>
+            </button>
           </form>
         </td>
 
