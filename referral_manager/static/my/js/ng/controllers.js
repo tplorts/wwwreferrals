@@ -11,6 +11,7 @@
             title: ''
         };
         $scope.isPosting = false;
+        $scope.isEditing = {};
         
         function fetchLinks() {
             ReferralLinks.getList().then(function(fetchedLinks){
@@ -31,8 +32,20 @@
             });
         };
 
-        $scope.editLink = function(linkIndex){
-            console.log('edit link at ' + linkIndex);
+        $scope.editLink = function(linkId, linkIndex){
+            var toEdit = $scope.links[linkIndex];
+            toEdit.pendingTitle = toEdit.title;
+            $scope.isEditing[linkId] = true;
+        };
+
+        $scope.commitLinkEdit = function(linkId, linkIndex){
+            $scope.isEditing[linkId] = false;
+            var toUpdate = $scope.links[linkIndex];
+            toUpdate.patch({title: toUpdate.pendingTitle}).then(function(updatedLink){
+                $scope.links[linkIndex] = updatedLink;
+            }, function(errorResponse){
+                console.log(errorResponse.data);
+            });
         };
 
         $scope.deleteLink = function(linkIndex){
