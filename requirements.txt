@@ -1,6 +1,8 @@
 Django==1.7.3
+boto==2.35.1
 dj-database-url==0.3.0
 dj-static==0.0.6
+django-storages==1.1.7b
 django-toolbelt==0.0.1
 djangorestframework==3.0.3
 gunicorn==19.1.1
