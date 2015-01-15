@@ -47,7 +47,7 @@
             if (toUpdate.title == toUpdate.pendingTitle)
                 return;
             toUpdate.patch({title: toUpdate.pendingTitle}).then(function(updatedLink){
-                $scope.links[linkId] = updatedLink;
+                toUpdate.title = toUpdate.pendingTitle;
             }, function(errorResponse){
                 console.log(errorResponse.data);
             });
