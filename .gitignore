@@ -81,3 +81,7 @@ scraped-data/
 
 
 local_settings.py
+
+
+# SASS
+.sass-cache/
