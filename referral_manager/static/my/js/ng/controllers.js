@@ -6,7 +6,7 @@
     cmod.controller('LinkListCtlr', ['$scope', 'Restangular', function($scope, Restangular) {
         var ReferralLinks = Restangular.all('links');
         
-        $scope.links = [];
+        $scope.links = {};
         $scope.newLink = {
             title: ''
         };
@@ -35,26 +35,26 @@
             });
         };
 
-        $scope.editLink = function(linkId, linkIndex){
-            var toEdit = $scope.links[linkIndex];
+        $scope.editLink = function(linkId){
+            var toEdit = _.findWhere($scope.links, {id: linkId});
             toEdit.pendingTitle = toEdit.title;
             $scope.isEditing[linkId] = true;
         };
 
-        $scope.commitLinkEdit = function(linkId, linkIndex){
+        $scope.commitLinkEdit = function(linkId){
             $scope.isEditing[linkId] = false;
-            var toUpdate = $scope.links[linkIndex];
+            var toUpdate = _.findWhere($scope.links, {id: linkId});
             if (toUpdate.title == toUpdate.pendingTitle)
                 return;
             toUpdate.patch({title: toUpdate.pendingTitle}).then(function(updatedLink){
-                $scope.links[linkIndex] = updatedLink;
+                $scope.links[linkId] = updatedLink;
             }, function(errorResponse){
                 console.log(errorResponse.data);
             });
         };
 
-        $scope.deleteLink = function(linkIndex){
-            var toDelete = $scope.links[linkIndex];
+        $scope.deleteLink = function(linkId){
+            var toDelete = _.findWhere($scope.links, {id: linkId});
             toDelete.remove().then(function(){
                 fetchLinks();
             }, function(errorResponse){
@@ -62,8 +62,9 @@
             });
         };
 
-        $scope.hitLink = function(linkIndex){
-            $scope.links[linkIndex].hits++;
+        $scope.hitLink = function(linkId){
+            var toHit = _.findWhere($scope.links, {id: linkId});
+            toHit.hits++;
         };
     }]);
 
