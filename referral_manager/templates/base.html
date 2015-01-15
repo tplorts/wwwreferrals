@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" {% block htmlClass %}{% endblock %}" {% block htmlAttributes %}{% endblock %}>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>{% block title %}WWW Referrals{% endblock %}</title>
+    <meta name="description" content="{% block description %}{% endblock %}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    {% load staticfiles miscellany %}
+
+
+    {% block styles3p %}{% endblock styles3p %}
+
+    {% block stylesBase %}
+      <style type="text/css">
+        {# To avoid flicker due to the latency of LESS compilation or stylesheet download #}
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+          display: none !important;
+        }
+      </style>
+
+    {% endblock stylesBase %}
+
+    {% block styles %}{% endblock %}
+
+
+    {% block antescriptsBase %}
+    {% endblock antescriptsBase %}
+
+    {% block antescripts %}{% endblock %}
+  </head>
+
+
+
+  <body class="{% block bodyClass %}{% endblock %}" ng-app="wwwReferralsApp" {% block bodyAttributes %}{% endblock %}>
+    <!--[if lt IE 9]>
+    <p class="browsehappy">
+    You are using an <strong>outdated</strong> browser.
+    Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.
+    </p>
+    <![endif]-->
+
+
+    <div id="major-envelope" class="{% block majorEnvelopeClass %}{% endblock %}">
+      {% block majorEnvelope %}
+      {% endblock %}
+    </div> <!-- /#major-envelope -->
+
+
+
+    {% block postscripts3p %}
+    {% endblock postscripts3p %}
+
+    {% block angularAppScripts %}
+      {% for appfile in "app,controllers,directives,filters,services"|split:"," %}
+        <script src="{% static 'my/js/ng/'|add:appfile %}.js"></script>
+      {% endfor %}
+    {% endblock angularAppScripts %}
+
+    {% block postscriptsBase %}{% endblock %}
+    {% block postscripts %}{% endblock %}
+
+  </body>
+</html>
+
