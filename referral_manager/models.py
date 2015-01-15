@@ -8,7 +8,7 @@ class ReferralLink(models.Model):
 
     # The distinct part of the route, which identifies the referral link.
     # Max of 126 to fit in PostgreSQL's short string requirement.
-    title = models.CharField(max_length=126)
+    title = models.CharField(max_length=126, unique=True)
 
     # Counts the number of times this referral link has been used.
-    hits = models.PositiveIntegerField(default=0)
+    hits = models.PositiveIntegerField(default=0, blank=True, editable=False)
