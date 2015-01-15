@@ -12,3 +12,6 @@ class ReferralLink(models.Model):
 
     # Counts the number of times this referral link has been used.
     hits = models.PositiveIntegerField(default=0, blank=True, editable=False)
+
+    def registerHit(self):
+        self.hits = self.hits + 1
