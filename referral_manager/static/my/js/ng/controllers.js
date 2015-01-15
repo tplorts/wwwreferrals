@@ -44,6 +44,8 @@
         $scope.commitLinkEdit = function(linkId, linkIndex){
             $scope.isEditing[linkId] = false;
             var toUpdate = $scope.links[linkIndex];
+            if (toUpdate.title == toUpdate.pendingTitle)
+                return;
             toUpdate.patch({title: toUpdate.pendingTitle}).then(function(updatedLink){
                 $scope.links[linkIndex] = updatedLink;
             }, function(errorResponse){
